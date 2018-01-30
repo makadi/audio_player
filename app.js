@@ -23,8 +23,12 @@ app.get('/', function(req, res) {
 });
 
 app.get('/playlists', function(req, res) {
-  console.log(req.body);
+  db.getAllTracks().then(data => res.json(data)).catch(e => {
+    console.log(e);
+    res.status(500).send(e.code);
+  });
 });
+
 
 app.post('/playlists', function(req, rea) {
   console.log(req.body);
