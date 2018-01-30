@@ -34,7 +34,7 @@ div {
   flex-direction: column;
 }
 .left {
-  border-right: 1px solid rgb(207, 207, 207);    
+  border-right: 1px solid rgb(207, 207, 207);
 }
 .right {
   border-left: 1px solid rgb(207, 207, 207);
