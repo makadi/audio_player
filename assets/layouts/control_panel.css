@@ -1,0 +1,35 @@
+.controller-container {
+  display: flex;
+  height: 50px;
+  background: #ffffff;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.controller-left-side {
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+}
+.button > img {
+  background-position: cover;
+  object-fit: contain;
+  padding: 10px;
+}
+.seek {
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+}
+.shuffle {
+  width: 40px;
+}
+.volume {
+  width: 140px;
+}
+.button:hover {
+  cursor: pointer;       
+  filter: brightness(140%);
+}

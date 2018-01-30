@@ -1,0 +1,39 @@
+.tracks-container {
+  display: flex;
+  flex-direction: column;
+}
+.tracks-container > .element > span:nth-child(1) {
+  width: 3%;
+}
+.tracks-container > .element > span:nth-child(2) {
+  width: 80%;
+}
+.tracks-container > .element > span:nth-child(3) {
+  width: 12%;
+}
+/* .tracks-container > .element > span:nth-child(4) {
+  opacity: 0.3;
+  max-height: 12px;
+  width: 4%;
+  display: none;
+} */
+.track-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 14px;
+  height: 35px;
+  width: 100%;
+  color: #5a5a5a;
+  font-weight: 300;
+  font-size: 13px;
+}
+.track-element:nth-child(even) {
+  background: #eaeaea;
+}
+.track-element:hover {
+  background: #b4f3f1;
+  filter: brightness(107%);
+  cursor: pointer;
+}
