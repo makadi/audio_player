@@ -1,2 +1,4 @@
 node_modules
 assets/tracks
+package-lock.json
+package.json
