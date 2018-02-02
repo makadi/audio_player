@@ -1,6 +1,9 @@
 'use strict';
 
 const ajaxAll = function() {
+  
+  console.log('3333333');
+
   const ajax = function(data) {
     return new Promise(function(resolve, reject) {
       const xhr = new XMLHttpRequest();
@@ -18,6 +21,7 @@ const ajaxAll = function() {
   }
 
   const getPlaylists = function() {
+    console.log('getPLajax')
     return ajax({
       method: 'GET',
       url: 'http://localhost:3000/playlists',
@@ -26,7 +30,8 @@ const ajaxAll = function() {
   }
 
   const getTracks = function(playlistId) {
-    let url = 'http://localhost:3000/playlist-tracks';
+    console.log('4444444');
+    let url = 'http://localhost:3000/tracks';
     url += playlistId === 'all' ? '' : `${playlistId}`;
     return ajax({
       method: 'GET',

@@ -1,34 +1,26 @@
 'use strict';
 
 const express = require('express');
-const mysql = require('mysql');
+const database = require('./database.js');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(express.json());
-
 app.use('/assets', express.static('./assets'));
-
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'indigo',
-  database: 'audio_player'
-});
-
-connection.connect();
+app.use(express.json());
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
 app.get('/playlists', function(req, res) {
-  db.getAllTracks().then(data => res.json(data)).catch(e => {
-    console.log(e);
-    res.status(500).send(e.code);
-  });
+  db.getAllTracks()
+      .then(data => res.json(data))
+      .catch(e => {
+        console.log(e);
+        res.status(500).send(e.code);
+      });
 });
-
 
 app.post('/playlists', function(req, rea) {
   console.log(req.body);

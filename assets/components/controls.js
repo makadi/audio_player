@@ -1,14 +1,10 @@
 'use strict';
 
-import ajax from 'ajax';
-import render from 'render';
-
-
 const controls = function() {
   const controlPanel = document.querySelector('.controller-container');
   const audioFile = controlPanel.querySelector('audio');
   
-  const loadTrack = function() {
+  const loadTrack = function(track) {
     audioFile.src = track.path;
     
     audioFile.addEventListener('canplay', function() {

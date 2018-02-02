@@ -8,6 +8,7 @@ const trackList = function() {
   // let onClick = null;
 
   const getTracklist = function() {
+    console.log('123123');
     ajaxAll.getTracks(playlistId).then(trackData => {
       tracks = trackData;
       createTracklistElements();

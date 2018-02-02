@@ -11,15 +11,20 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-const dbQuery = function() {
-  return new Promise(function(query) {
-    connection,query(query, function(error, resulta) {
+const dbQuery = function(query) {
+  console.log('dbQuery');
+  return new Promise(function(resolve, reject) {
+    connection,query(query, function(error, results) {
       error ? reject(error) : resolve(results);
     });
   });
 }
 
 const getAllTracks = function() {
+  console.log('dbQueryGetAll');
   return dbQuery(`SELECT * FROM one`);
 }
 
+module.exports = {
+  getAllTracks
+}
