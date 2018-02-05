@@ -8,23 +8,29 @@ const trackList = function() {
   // let onClick = null;
 
   const getTracklist = function() {
-    console.log('123123');
-    ajaxAll.getTracks(playlistId).then(trackData => {
+    console.log('getTracklist');
+    ajaxAll().getTracks().then(trackData => {
       tracks = trackData;
-      createTracklistElements();
+      console.log(trackData);
+      createTracklistElements(tracks);
     });
   }
 
-  const createTracklistElements = function() {
+  const createTracklistElements = function(tracks) {
+    console.log('createTracklistElements');
     tracklist.innerHTML = '';
+    console.log(tracklist);
     tracks.forEach(function(track, index) {
       const trackRow = document.createElement('div');
       trackRow.innerHTML = `<span>${index + 1}</span>
-                            <span>${track.title}</span>
-                            <span>${track.length}</span>`
+                            <span>${track.name}</span>
+                            <span>${track.length}</span>`;
+      trackRow.classList.add('track');
+      trackRow.classList.add('element');
       tracklist.appendChild(trackRow);
     })
     trackElements = tracklist.querySelectorAll('div');
+    console.log(trackElements);
   }
 
   // const makeOnClickAction = function(type) {
@@ -36,3 +42,5 @@ const trackList = function() {
     getTracklist
   }
 }
+
+trackList().getTracklist();

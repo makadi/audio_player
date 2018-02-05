@@ -11,12 +11,11 @@ const connection = mysql.createConnection({
 
 connection.connect(function (err){
   if(err){
-      console.log('Error connecting to DB.');
+      console.log('error connecting to db');
       return;
   };
-  console.log('Connected to the DB.');
+  console.log('connected to db');
 });
-
 
 const dbQuery = function(query) {
   console.log('mainQuery');
@@ -29,7 +28,9 @@ const dbQuery = function(query) {
               resolve(results);
           }
     });
+    console.log('kaki');
   });
+
 }
 
 const getAllTracks = function() {

@@ -1,8 +1,8 @@
 'use strict';
 
 const express = require('express');
-const database = require('./database.js');
 const bodyParser = require('body-parser');
+const database = require('./database');
 
 const app = express();
 
@@ -21,9 +21,7 @@ app.get('/tracks', function(req, res) {
         console.log(e);
         res.status(500).send(e.code);
       });
-  console.log(req.body);
 });
-
 
 // app.get('/playlists', function(req, res) {
 //   database.getAllTracks()
@@ -58,4 +56,4 @@ app.get('/tracks', function(req, res) {
 //   console.log(req.body);  
 // });
 
-app.listen(3000, () => console.log('running on port 3000..'));
+app.listen(3000, () => console.log('running on port 3000'));

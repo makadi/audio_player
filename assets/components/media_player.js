@@ -1,12 +1,12 @@
 'use strict';
 
-// (function() {
-//   const controls = controls();
-//   const Tracklist = trackList();
-//   const AjaxCalls = ajaxAll();
+(function() {
+  console.log('mediaPlayer');
+  // const controls = controls();
+  // const AjaxCalls = ajaxAll();
+  const Tracklist = trackList();
 
-//   Tracklist.getTracklist();
-//   console.log('999999');
+  Tracklist.getTracklist();
 
 
-// });
+});
