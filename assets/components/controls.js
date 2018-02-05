@@ -4,58 +4,59 @@ const controls = function(tracks) {
   const controlPanel = document.querySelector('.controller-container');
   const audio = controlPanel.querySelector('audio');
   const $tracks = tracks;
+  let currentTrackIndex = 0;
 
-  
   const loadTrack = function(track) {
-    console.log('loadTrack');
-    // console.log(track);
+    currentTrackIndex = track.id;
     audio.src = track.path;
-    let trackElements = document.querySelectorAll('.track');
-    let trackNames = document.querySelectorAll('.tn');
-    trackElements.forEach(function(e, i) {
-      e.addEventListener('click', function() {
-        e.classList.add('element-active');
-        e.classList.remove('element');
-        // if (i === audio)
-      })
-    })
-    currentTrack(track);
-    // audio.addEventListener('canplay', function() {
-      //   togglePlay();
-      // });
   }
 
-  const currentTrack = function(track) {
-    console.log('currentTrack');
-    const currentInfo = document.querySelector('.current-track-info');
-    const artistName = track.name.split('- ')[0];
-    const trackTitle = track.name.split('- ')[1];
-    currentInfo.innerHTML = `<span>${trackTitle}</span>
-                             <span>${artistName}</span>`;
+  const prevTrack = function() {
+    if (currentTrackIndex > 0) {
+      currentTrackIndex -= 1;
+    } else {
+      currentTrackIndex = tracks.length - 1;
+    }
+    return currentTrackIndex;
   }
+  
+  const nextTrack = function() {
+    if (currentTrackIndex < tracks.length - 1) {
+      currentTrackIndex += 1;
+      } else {
+        currentTrackIndex = 0;
+      }
+    return currentTrackIndex;
+  }
+  
+  return {
+    loadTrack,
+    prevTrack,
+    nextTrack
+  }
+}
 
-  // const prevTrack = function() {
-  //   console.log('prevTrack')
+
+  // const playPause = function() {
+  //   if (audio.paused) {
+  //     audio.play();
+  //   } else {
+  //     audio.pause();
+  //   }
   // }
-
-  // const nextTrack = function() {
-  //   console.log('nextTrack')
-  // }
-
-
+  
+  // audio.addEventListener('canplay', function() {
+    //   togglePlay();
+    // });
+  
   // const renderPlaylists = function() {
-  //   console.log('renderPlaylists')  
+  //   console.log('renderPlaylists')
   // }
 
   // const removeTracklist = function() {
-  //   console.log('renderTracklist')  
+  //   console.log('renderTracklist')
   // }
 
   // const renderTracklist = function() {
-  //   console.log('renderTracklist')  
+  //   console.log('renderTracklist')
   // }
-
-  return {
-    loadTrack
-  }
-}
