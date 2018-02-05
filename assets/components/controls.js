@@ -1,15 +1,31 @@
 'use strict';
 
-const controls = function() {
+const controls = function(tracks) {
   const controlPanel = document.querySelector('.controller-container');
-  const audioFile = controlPanel.querySelector('audio');
+  const audio = controlPanel.querySelector('audio');
+  const $tracks = tracks;
+
   
   const loadTrack = function(track) {
-    audioFile.src = track.path;
+    console.log('loadTrack');
+    // console.log(track);
+    audio.src = track.path;
+    let trackElements = document.querySelectorAll('.track');
+    let trackNames = document.querySelectorAll('.tn');
+    trackElements.forEach(function(e, i) {
+      e.addEventListener('click', function() {
+        e.classList.add('element-active');
+        e.classList.remove('element');
+        // if (i === audio)
+      })
+    })
     
-    audioFile.addEventListener('canplay', function() {
-      togglePlay();
-    });
+
+
+    
+    // audio.addEventListener('canplay', function() {
+    //   togglePlay();
+    // });
 
   }
 
@@ -36,4 +52,8 @@ const controls = function() {
   // const renderTracklist = function() {
   //   console.log('renderTracklist')  
   // }
+
+  return {
+    loadTrack
+  }
 }

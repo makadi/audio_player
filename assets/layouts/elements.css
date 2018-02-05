@@ -25,6 +25,7 @@
   width: 4%;
   display: none;
 }
+
 .element {
   justify-content: space-between;
   align-items: center;
@@ -47,5 +48,28 @@
   cursor: pointer;
 }
 .element:active {
+  filter: brightness(40%);  
+}
+
+.element-active {
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  padding-left: 14px;
+  height: 35px;
+  width: 100%;
+  font-weight: 300;
+  font-size: 13px;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: rgb(56, 56, 56);
+  color: rgb(228, 228, 228);
+}
+.element-active:hover {
+  filter: brightness(102%);
+  background: #616161;
+  cursor: pointer;
+}
+.element-active:active {
   filter: brightness(40%);  
 }

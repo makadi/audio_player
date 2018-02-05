@@ -20,14 +20,15 @@ const tracklist = function() {
     $tracklist.innerHTML = '';
     tracks.forEach(function(track, index) {
       const trackRow = document.createElement('div');
-      trackRow.innerHTML = `<span>${index + 1}</span>
-                            <span>${track.name}</span>
+      trackRow.innerHTML = `<span class="d">${index + 1}</span>
+                            <span class="tn">${track.name}</span>
                             <span>${track.length}</span>`;
       trackRow.classList.add('track');
       trackRow.classList.add('element');
       $tracklist.appendChild(trackRow);
     })
     trackElements = $tracklist.querySelectorAll('div');
+    controls(tracks).loadTrack(tracks[0]);
   }
 
   // const makeOnClickAction = function(type) {
@@ -36,7 +37,8 @@ const tracklist = function() {
 
   return {
     // makeOnClickAction,
-    getTracklist
+    getTracklist,
+    createTracklistElements
   }
 }
 
