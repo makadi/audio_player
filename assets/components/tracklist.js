@@ -27,13 +27,12 @@ const trackList = function() {
     trackElements = tracklist.querySelectorAll('div');
   }
 
-  const makeOnClickAction = function(type) {
-    onClick = type;
-  }
+  // const makeOnClickAction = function(type) {
+  //   onClick = type;
+  // }
 
   return {
-    getTracklist,
-    makeOnClickAction,
+    // makeOnClickAction,
     getTracklist
   }
 }

@@ -9,20 +9,32 @@ const connection = mysql.createConnection({
   database: 'audio_player'
 });
 
-connection.connect();
+connection.connect(function (err){
+  if(err){
+      console.log('Error connecting to DB.');
+      return;
+  };
+  console.log('Connected to the DB.');
+});
+
 
 const dbQuery = function(query) {
-  console.log('dbQuery');
+  console.log('mainQuery');
   return new Promise(function(resolve, reject) {
-    connection,query(query, function(error, results) {
-      error ? reject(error) : resolve(results);
+    connection.query(query, 
+      function(err, results) {
+          if (err) {
+               reject(err);
+          } else {
+              resolve(results);
+          }
     });
   });
 }
 
 const getAllTracks = function() {
-  console.log('dbQueryGetAll');
-  return dbQuery(`SELECT * FROM one`);
+  console.log('getAllTracksQueryString');
+  return dbQuery(`SELECT * FROM one;`);
 }
 
 module.exports = {

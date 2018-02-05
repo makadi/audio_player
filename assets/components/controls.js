@@ -13,27 +13,27 @@ const controls = function() {
 
   }
 
-  const prevTrack = function() {
-    console.log('prevTrack')
-  }
+  // const prevTrack = function() {
+  //   console.log('prevTrack')
+  // }
 
-  const nextTrack = function() {
-    console.log('nextTrack')
-  }
+  // const nextTrack = function() {
+  //   console.log('nextTrack')
+  // }
 
-  const currentTrack = function() {
-    console.log('currentTrack')
-  }
+  // const currentTrack = function() {
+  //   console.log('currentTrack')
+  // }
 
-  const renderPlaylists = function() {
-    console.log('renderPlaylists')  
-  }
+  // const renderPlaylists = function() {
+  //   console.log('renderPlaylists')  
+  // }
 
-  const removeTracklist = function() {
-    console.log('renderTracklist')  
-  }
+  // const removeTracklist = function() {
+  //   console.log('renderTracklist')  
+  // }
 
-  const renderTracklist = function() {
-    console.log('renderTracklist')  
-  }
+  // const renderTracklist = function() {
+  //   console.log('renderTracklist')  
+  // }
 }
