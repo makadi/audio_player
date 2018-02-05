@@ -38,6 +38,12 @@ const getAllTracks = function() {
   return dbQuery(`SELECT * FROM one;`);
 }
 
+const getPlaylists = function() {
+  console.log('getAllPlaylistQueryString');
+  return dbQuery(`SHOW TABLES;`);
+}
+
 module.exports = {
-  getAllTracks
+  getAllTracks,
+  getPlaylists
 }

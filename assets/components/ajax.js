@@ -19,14 +19,15 @@ const ajaxAll = function() {
     });
   }
 
-  // const getPlaylists = function() {
-  //   console.log('getPLajax')
-  //   return ajax({
-  //     method: 'GET',
-  //     url: 'http://localhost:3000/playlists',
-  //     body: ''
-  //   });
-  // }
+  const getPlaylists = function() {
+    console.log('getPlaylistsAjax');
+    let url = 'http://localhost:3000/playlists';
+    return ajax({
+      method: 'GET',
+      url: url,
+      body: ''
+    });
+  }
 
   const getTracks = function() {
     console.log('getTracksAjax');
@@ -39,9 +40,8 @@ const ajaxAll = function() {
     });
   }
 
-  
   return {
-    // getPlaylists,
+    getPlaylists,
     getTracks
   }
 }

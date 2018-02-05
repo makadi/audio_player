@@ -1,7 +1,7 @@
 'use strict';
 
-const trackList = function() {
-  const tracklist = document.querySelector('.tracks-container');
+const tracklist = function() {
+  const $tracklist = document.querySelector('.tracks-container');
   let trackElements = null;
   let currentPlayIndex = null;
   let tracks = null;
@@ -17,9 +17,7 @@ const trackList = function() {
   }
 
   const createTracklistElements = function(tracks) {
-    console.log('createTracklistElements');
-    tracklist.innerHTML = '';
-    console.log(tracklist);
+    $tracklist.innerHTML = '';
     tracks.forEach(function(track, index) {
       const trackRow = document.createElement('div');
       trackRow.innerHTML = `<span>${index + 1}</span>
@@ -27,10 +25,9 @@ const trackList = function() {
                             <span>${track.length}</span>`;
       trackRow.classList.add('track');
       trackRow.classList.add('element');
-      tracklist.appendChild(trackRow);
+      $tracklist.appendChild(trackRow);
     })
-    trackElements = tracklist.querySelectorAll('div');
-    console.log(trackElements);
+    trackElements = $tracklist.querySelectorAll('div');
   }
 
   // const makeOnClickAction = function(type) {
@@ -43,4 +40,4 @@ const trackList = function() {
   }
 }
 
-trackList().getTracklist();
+tracklist().getTracklist();

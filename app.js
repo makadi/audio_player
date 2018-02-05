@@ -23,14 +23,14 @@ app.get('/tracks', function(req, res) {
       });
 });
 
-// app.get('/playlists', function(req, res) {
-//   database.getAllTracks()
-//       .then(data => res.json(data))
-//       .catch(e => {
-//         console.log(e);
-//         res.status(500).send(e.code);
-//       });
-// });
+app.get('/playlists', function(req, res) {
+  database.getPlaylists()
+      .then(data => res.json(data))
+      .catch(e => {
+        console.log(e);
+        res.status(500).send(e.code);
+      });
+});
 
 // app.post('/playlists', function(req, rea) {
 //   console.log(req.body);
