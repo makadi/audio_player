@@ -32,7 +32,6 @@ const ajaxAll = function() {
   const getTracks = function() {
     console.log('getTracksAjax');
     let url = 'http://localhost:3000/tracks';
-    // url += playlistId === 'all' ? '' : `${playlistId}`;
     return ajax({
       method: 'GET',
       url: url,

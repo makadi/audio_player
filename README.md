@@ -1,3 +1,5 @@
 # audio_player
 
-in progress
+tryouts in functional programming, this time creating an audio player.
+
+in progress...

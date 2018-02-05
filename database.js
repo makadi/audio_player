@@ -29,7 +29,6 @@ const dbQuery = function(query) {
           }
     });
   });
-
 }
 
 const getAllTracks = function() {
