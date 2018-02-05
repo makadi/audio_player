@@ -19,14 +19,19 @@ const controls = function(tracks) {
         // if (i === audio)
       })
     })
-    
-
-
-    
+    currentTrack(track);
     // audio.addEventListener('canplay', function() {
-    //   togglePlay();
-    // });
+      //   togglePlay();
+      // });
+  }
 
+  const currentTrack = function(track) {
+    console.log('currentTrack');
+    const currentInfo = document.querySelector('.current-track-info');
+    const artistName = track.name.split('- ')[0];
+    const trackTitle = track.name.split('- ')[1];
+    currentInfo.innerHTML = `<span>${trackTitle}</span>
+                             <span>${artistName}</span>`;
   }
 
   // const prevTrack = function() {
@@ -37,9 +42,6 @@ const controls = function(tracks) {
   //   console.log('nextTrack')
   // }
 
-  // const currentTrack = function() {
-  //   console.log('currentTrack')
-  // }
 
   // const renderPlaylists = function() {
   //   console.log('renderPlaylists')  
