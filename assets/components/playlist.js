@@ -18,8 +18,9 @@ const playlist = function() {
     $playlist.innerHTML = '';
     playlists.forEach(function(pl, index) {
       const playlistRow = document.createElement('div');
+      console.log(playlists);
       playlistRow.innerHTML = `<span>${index + 1}</span>
-                            <span>${playlists.Tables_in_audio_player}</span>`;
+                                <span>${pl.name}</span>`;
       playlistRow.classList.add('playlist');
       playlistRow.classList.add('element');
       $playlist.appendChild(playlistRow);

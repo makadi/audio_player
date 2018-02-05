@@ -28,7 +28,6 @@ const dbQuery = function(query) {
               resolve(results);
           }
     });
-    console.log('kaki');
   });
 
 }
@@ -40,7 +39,7 @@ const getAllTracks = function() {
 
 const getPlaylists = function() {
   console.log('getAllPlaylistQueryString');
-  return dbQuery(`SHOW TABLES;`);
+  return dbQuery(`SELECT * from playlist;`);
 }
 
 module.exports = {

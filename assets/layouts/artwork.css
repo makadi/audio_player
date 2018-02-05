@@ -10,9 +10,10 @@
   height: 115px;
   padding: 14px;
   justify-content: flex-start;
+  align-items: center;
 }
 .logo-container > img {
-  height: 100%; 
+  height: 90%; 
   object-fit: contain;
 }
 .playlist-button-container {
