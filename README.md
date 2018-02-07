@@ -3,4 +3,4 @@
 in progress...
 javascript web audio player with node.js express backend
 
-![progress_screenshot](https://user-images.githubusercontent.com/24967663/35891153-296124a4-0ba3-11e8-9bf1-9fad4d7a6521.jpg)
+![shot_wide](https://user-images.githubusercontent.com/24967663/35891652-b3d35646-0ba5-11e8-8b33-01f6a6765bbe.jpg)
